@@ -44,31 +44,15 @@ function paintMap() {
 	if (!address) {
 		return;
 	}
-	var url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
-		address.split(' ').join('+') + '&size=' + width + 'x' + height + '&zoom=' + zoom +
-		'&markers=' + address.split(' ').join('+') + '&key=' + mapsKey;
-	sdk.setContent('<a href="' + link + '"><img src="' + url + '" /></a>');
+	sdk.setContent('<div>+mapsKey+</div>');
 	sdk.setData({
-		address: address,
-		width: width,
-		height: height,
-		zoom: zoom,
-		link: link,
 		mapsKey: mapsKey
 	});
 	localStorage.setItem('googlemapsapikeyforblock', mapsKey);
 }
 
 sdk.getData(function (data) {
-	address = data.address || '';
-	width = data.width || 400;
-	height = data.height || 300;
-	zoom = data.zoom || 15;
-	link = data.link || '';
 	mapsKey = data.mapsKey || localStorage.getItem('googlemapsapikeyforblock');
-	paintSettings();
-	paintSliderValues();
-	paintMap();
 });
 
 document.getElementById('workspace').addEventListener("input", function () {
