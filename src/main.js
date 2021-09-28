@@ -3,7 +3,7 @@ require('../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-l
 var SDK = require('blocksdk');
 var sdk = new SDK(null, null, true); // 3rd argument true bypassing https requirement: not prod worthy
 
-var link, mapsKey;
+var mapsKey;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -29,21 +29,18 @@ function paintSliderValues () {
 
 function paintMap() {
 	mapsKey = document.getElementById('text-input-id-0').value;
-	link = document.getElementById('text-input-id-2').value;
 
 //	var url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
 //		address.split(' ').join('+') + '&size=' + width + 'x' + height + '&zoom=' + zoom +
 //		'&markers=' + address.split(' ').join('+') + '&key=' + mapsKey;
 	sdk.setContent(mapsKey);
 	sdk.setData({
-		link: link,
 		mapsKey: mapsKey
 	});
 	localStorage.setItem('consent', mapsKey);
 }
 
 sdk.getData(function (data) {
-	link = data.link || '';
 	mapsKey = data.mapsKey || localStorage.getItem('consent');
 	paintSettings();
 	paintSliderValues();
