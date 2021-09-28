@@ -125,7 +125,7 @@ function paintMap() {
 		link: link,
 		mapsKey: mapsKey
 	});
-	localStorage.setItem('googlemapsapikeyforblock', mapsKey);
+	localStorage.setItem('consent', mapsKey);
 }
 
 sdk.getData(function (data) {
@@ -134,7 +134,7 @@ sdk.getData(function (data) {
 	height = data.height || 300;
 	zoom = data.zoom || 15;
 	link = data.link || '';
-	mapsKey = data.mapsKey || localStorage.getItem('googlemapsapikeyforblock');
+	mapsKey = data.mapsKey || localStorage.getItem('consent');
 	paintSettings();
 	paintSliderValues();
 	paintMap();
