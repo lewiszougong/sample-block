@@ -30,9 +30,6 @@ function paintSliderValues () {
 function paintMap() {
 	mapsKey = document.getElementById('text-input-id-0').value;
 
-//	var url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
-//		address.split(' ').join('+') + '&size=' + width + 'x' + height + '&zoom=' + zoom +
-//		'&markers=' + address.split(' ').join('+') + '&key=' + mapsKey;
 	sdk.setContent(mapsKey);
 	sdk.setData({
 		mapsKey: mapsKey
@@ -41,7 +38,7 @@ function paintMap() {
 }
 
 sdk.getData(function (data) {
-	mapsKey = data.mapsKey || localStorage.getItem('consent');
+	mapsKey = data.mapsKey;
 	paintSettings();
 	paintSliderValues();
 	paintMap();
