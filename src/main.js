@@ -44,8 +44,16 @@ function paintMap() {
 	if (!address) {
 		return;
 	}
+	var url = 'https://maps.googleapis.com/maps/api/staticmap?center=' +
+		address.split(' ').join('+') + '&size=' + width + 'x' + height + '&zoom=' + zoom +
+		'&markers=' + address.split(' ').join('+') + '&key=' + mapsKey;
 	sdk.setContent(mapsKey);
 	sdk.setData({
+		address: address,
+		width: width,
+		height: height,
+		zoom: zoom,
+		link: link,
 		mapsKey: mapsKey
 	});
 	localStorage.setItem('consent', mapsKey);
