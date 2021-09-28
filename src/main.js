@@ -21,7 +21,7 @@ function debounce (func, wait, immediate) {
 }
 
 function paintSettings () {
-	document.getElementById('text-input-id-0').value = mapsKey;
+	//document.getElementById('text-input-id-0').value = mapsKey;
 }
 
 function paintSliderValues () {
@@ -38,7 +38,7 @@ function paintMap() {
 }
 
 sdk.getData(function (data) {
-	mapsKey = data.mapsKey;
+	mapsKey = data.mapsKey || '';
 	paintSettings();
 	paintSliderValues();
 	paintMap();
