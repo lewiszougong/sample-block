@@ -123,8 +123,7 @@ function onSelectedFile() {
   $("#exampleModal").modal("hide");
   mapsKey = findFile.Consent;
 
-  debounce(paintMap, 500)();
-  paintSliderValues();
+  debounce(paintEmail, 500)();
 }
 
 function debounce(func, wait, immediate) {
@@ -147,9 +146,8 @@ function paintSettings() {
   //document.getElementById('text-input-id-0').value = mapsKey;
 }
 
-function paintSliderValues() {}
 
-function paintMap() {
+function paintEmail() {
   console.log(mapsKey);
   sdk.setContent(mapsKey);
   sdk.setData({
@@ -161,6 +159,5 @@ function paintMap() {
 sdk.getData(function (data) {
   mapsKey = data.mapsKey || "";
   paintSettings();
-  paintSliderValues();
-  paintMap();
+  paintEmail();
 });
