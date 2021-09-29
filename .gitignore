@@ -1,7 +1,7 @@
 # GRUNT TEST COVERAGE FILES
 /temp/**
 /coverage/**
-
+dist
 # NODE/NPM/GRUNT
 node_modules
 npm-debug.log
