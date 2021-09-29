@@ -146,7 +146,6 @@ function paintSettings() {
   //document.getElementById('text-input-id-0').value = mapsKey;
 }
 
-
 function paintEmail() {
   console.log(mapsKey);
   sdk.setContent(mapsKey);

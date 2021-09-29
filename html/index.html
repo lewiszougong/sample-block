@@ -49,7 +49,7 @@
       display: flex;
       align-items: center;
       padding: 20px;
-      width: fit-content;
+      min-width: 300px;
     }
     .select-file-content {
       display: flex;
@@ -64,7 +64,7 @@
     }
 
     .modal-body {
-      max-height: 500px;
+      max-height: 400px;
       overflow: auto;
     }
 
@@ -87,6 +87,13 @@
     .custom-file-content:hover {
       box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
     }
+
+    .file-status {
+      max-width: 300px;
+      margin-top: 10px;
+      word-wrap: break-word;
+      display: block;
+    }
   </style>
   <body>
     <div class="slds-grid slds-gutters items-center card-contaner">
@@ -104,7 +111,7 @@
               >
                 Browse
               </button>
-              <span id="file-status"></span>
+              <span class="file-status" id="file-status"></span>
             </div>
           </div>
         </article>
