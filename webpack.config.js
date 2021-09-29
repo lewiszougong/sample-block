@@ -56,6 +56,12 @@ module.exports = function (env, argv) {
           ),
           to: path.resolve(__dirname, "dist/design-system"),
         },
+        {
+          // you may want to bundle SLDS SASS files with webpack,
+          // we'll keep things simple for this example and just copy SLDS into dist
+          from: path.resolve(__dirname, "./images"),
+          to: path.resolve(__dirname, "dist"),
+        },
       ]),
       new webpack.BannerPlugin(
         `${PACKAGE.author} - ${PACKAGE.description} - content-block`

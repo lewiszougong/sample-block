@@ -59,11 +59,10 @@
     }
     .submit-button {
       margin-top: 15px;
-      width: 150px;
     }
 
     .modal-dialog {
-      min-width: 700px !important;
+      overflow-x: auto;
     }
 
     .modal-body {
@@ -77,6 +76,7 @@
     }
     .files-content {
       overflow: auto;
+      min-width: 400px;
     }
 
     .content-active {
@@ -91,7 +91,7 @@
     }
 
     .select-file > button {
-      width: 150px;
+      
     }
   </style>
   <body>
@@ -140,7 +140,7 @@
           </div>
           <div class="modal-body">
             <form class="row g-3">
-              <div class="col-10">
+              <div class="col">
                 <input
                   type="text"
                   class="form-control"
